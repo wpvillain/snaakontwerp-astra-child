@@ -1,0 +1,92 @@
+/**
+Theme Name: Snaakontwerp
+Author: Imagewize
+Author URI: https://imagewize.com
+Description: Snaakontwerp Astra child theme
+
+Child theme to support WooCommerce and Fancy Product Designer for the snaakontwerp.nl website.
+
+This child theme has been build and customized by Imagewize.
+
+Version: 1.1.7
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: snaakontwerp
+Template: astra
+*/
+
+.fpd-product-designer-wrapper .fpd-container {
+    min-height: 700px;
+}
+
+.woocommerce .elementor-add-to-cart .cart .e-atc-qty-button-holder {
+    display: flex;
+}
+
+.single_add_to_cart_button.button.alt {
+    margin-left: 20px;
+}
+
+
+.ast-mobile-svg.ast-close-svg {
+    width: 20px !important;
+    height: 20px !important;
+}
+
+/**
+* Hide pricing so price can be dealt with later post order
+
+*/
+.woocommerce-Price-amount.amount, 
+.product-total, .cart-subtotal, 
+.order-total, .product-subtotal,
+.product-price {
+    display: none;
+}
+
+.single-product form.cart .single_add_to_cart_button {
+    padding: 6px 7px 5px 7px;
+    font-size: 0.8em;
+}
+
+.woocommerce-order-overview__total.total {
+    display: none;
+}
+
+.woocommerce-shipping-totals.shipping {
+    display: none;
+}
+
+.woocommerce-checkout tfoot {
+    display: none;
+}
+
+/* Fancy Product Designer logos background */
+
+.fpd-grid-columns-2 .fpd-grid>.fpd-item,
+.fpd-thumbnail-preview {
+    background: #B5B5B5;
+}
+
+/* Fancy Product Designer logos background */
+
+.fpd-grid-columns-2 .fpd-grid>.fpd-item,
+.fpd-thumbnail-preview {
+    background: #B5B5B5;
+}
+
+/* Hide Category on Home and Products Page */
+
+.home ul.products li.product .ast-woo-product-category,
+.post-type-archive-product ul.products li.product .ast-woo-product-category {
+	display:none;
+}
+
+div.elementor-shortcode a.dynamic-product-link-button {
+	background-color: #1C3E48;
+	border-radius: 10px 10px 10px 10px;
+}
+
+div.elementor-shortcode a.dynamic-product-link-button:hover {
+    background-color:#E68543;
+}
