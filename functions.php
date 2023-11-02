@@ -57,22 +57,6 @@ add_action( 'wp_enqueue_scripts', 'child_enqueue_styles', 15 );
  * @compatible    WooCommerce 6
  * @donate $9     https://businessbloomer.com/bloomer-armada/
  */
-  
-// add_filter( 'woocommerce_package_rates', 'bbloomer_unset_shipping_when_free_is_available_in_zone', 9999, 2 );
-   
-// function bbloomer_unset_shipping_when_free_is_available_in_zone( $rates, $package ) {
-   // Only unset rates if free_shipping is available
-//   if ( isset( $rates['free_shipping:8'] ) ) {
-//      unset( $rates['flat_rate:1'] );
-//   }     
-//   return $rates;
-//}
-
-// not needed as basic cart does Dutch and display
-// add_filter('wc_add_to_cart_message', 'handler_function_name', 10, 2);
-// function handler_function_name($message, $product_id) {
-//     return "Bekijk winkelmand" . ' ' .wc_get_product( get_the_id() )    ;
-// }
 
 remove_filter( 'the_content', 'convert_smilies', 20 );
 
