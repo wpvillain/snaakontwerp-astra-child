@@ -82,6 +82,8 @@ Template: astra
 	display:none;
 }
 
+/* Dynamic Product Link Button Shortcode button styling */
+
 div.elementor-shortcode a.dynamic-product-link-button {
 	background-color: #1C3E48;
 	border-radius: 10px 10px 10px 10px;
