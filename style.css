@@ -49,6 +49,8 @@ Template: astra
     font-size: 0.8em;
 }
 
+/* Hide WooCommerce Price Details */
+
 .woocommerce-order-overview__total.total {
     display: none;
 }
@@ -91,4 +93,14 @@ div.elementor-shortcode a.dynamic-product-link-button {
 
 div.elementor-shortcode a.dynamic-product-link-button:hover {
     background-color:#E68543;
+}
+
+/** cart video banner aspect ratio */
+.woocommerce-cart .e-hosted-video.elementor-wrapper.elementor-open-inline {
+aspect-ratio: 7.2/1;
+}
+
+/* Checkout Product Quantity */
+.woocommerce-checkout .product-quantity {
+	display:none;
 }
