@@ -133,3 +133,40 @@ add_shortcode('dynamic_product_link_button', 'dynamic_product_link_button_shortc
 
 // }
 // add_action( 'after_setup_theme', 'wc_remove_image_effect_support', 100 );
+
+add_filter( 'woocommerce_defer_transactional_emails', '__return_true' );
+
+/**
+ * @snippet       Product Category Switcher @ Product Category Pages
+ * @how-to        Get CustomizeWoo.com FREE
+ * @author        Rodolfo Melogli
+ * @compatible    WooCommerce 8
+ * @donate $9     https://businessbloomer.com/bloomer-armada/
+ */
+ 
+add_action( 'woocommerce_before_shop_loop', 'bbloomer_filter_by_tag', 31 );
+ 
+function bbloomer_filter_by_tag() {    
+   if ( is_shop() || is_product_category ()) {      
+      wc_product_dropdown_categories();   
+   } 
+   wc_enqueue_js( "
+      $('#product_cat').change(function () {
+         location.href = '/product-categorie/' + $(this).val();
+      });
+   " );
+}
+
+/**
+ * @snippet       Remove Sorting Dropdown @ WooCommerce Shop & Archives
+ * @how-to        Get CustomizeWoo.com FREE
+ * @author        Rodolfo Melogli
+ * @compatible    WooCommerce 7
+ * @donate $9     https://businessbloomer.com/bloomer-armada/
+ */
+  
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
+
+/* remove result counts before and after shop loop */
+remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
+remove_action('woocommerce_after_shop_loop', 'woocommerce_result_count', 20);

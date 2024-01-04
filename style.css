@@ -104,3 +104,56 @@ aspect-ratio: 7.2/1;
 .woocommerce-checkout .product-quantity {
 	display:none;
 }
+
+
+ /* Stijl voor FPD */
+
+.fpd-container .fpd-grid>.fpd-category.fpd-item>span{white-space:unset}
+.fpd-modal-product-designer fpd-actions-bar .fpd-total-price{display:none!important}
+/* Apply the initial styles */
+
+.fpd-blue-btn {
+    background: #e68543;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 19px;
+    letter-spacing: 1.5px;
+    text-align: center;
+    border-radius: 10px;
+    display: inline-block;
+    text-decoration: none;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+/* Change the button color when hovered and keep the text white */
+.fpd-blue-btn:hover {
+    background: #ffbc71;
+    color: #fff; /* Text color remains white when hovered */
+}
+
+}
+.fpd-container fpd-actions-bar .fpd-btn.fpd-btn-fill{background:#E68543}
+
+
+/* Shop & Category Category Dropdown Styling */
+.woocommerce-js .select2-container .select2-selection--single, 
+.woocommerce-js select, 
+.woocommerce-page .select2-container .select2-selection--single, 
+.woocommerce-page select {
+	border-color:white !important;
+/* 	margin-left:10px; */
+}
+
+@media (max-width:544px) {
+	woocommerce-sho.woocommerce .woocommerce-ordering, 
+	.woocommerce-page .woocommerce-ordering {
+	float: none;
+	margin-bottom: 0em;
+	}
+	.elementor-element .woocommerce .woocommerce-result-count {
+	margin-left:10px;
+}
+}
+
+
