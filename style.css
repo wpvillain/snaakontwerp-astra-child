@@ -126,14 +126,25 @@ aspect-ratio: 7.2/1;
     transition: background-color 0.3s;
 }
 
+/* next step button styling */
+
 /* Change the button color when hovered and keep the text white */
+
+.fpd-container fpd-actions-bar .fpd-btn.fpd-btn-fill {
+    background:#E68543;
+}
+
 .fpd-blue-btn:hover {
     background: #ffbc71;
     color: #fff; /* Text color remains white when hovered */
 }
 
+
+.fpd-container fpd-actions-bar .fpd-btn.fpd-btn-fill:hover {
+    background-color: #ffbc71;
+    color: #fff; /* Text color remains white when hovered */
 }
-.fpd-container fpd-actions-bar .fpd-btn.fpd-btn-fill{background:#E68543}
+
 
 
 /* Shop & Category Category Dropdown Styling */
@@ -153,7 +164,5 @@ aspect-ratio: 7.2/1;
 	}
 	.elementor-element .woocommerce .woocommerce-result-count {
 	margin-left:10px;
+    }
 }
-}
-
-
