@@ -126,9 +126,7 @@ aspect-ratio: 7.2/1;
     transition: background-color 0.3s;
 }
 
-/* next step button styling */
-
-/* Change the button color when hovered and keep the text white */
+/* fancy product designer next step and style button styling */
 
 .fpd-container fpd-actions-bar .fpd-btn.fpd-btn-fill {
     background:#E68543;
