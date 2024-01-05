@@ -25,31 +25,6 @@ function child_enqueue_styles() {
 add_action( 'wp_enqueue_scripts', 'child_enqueue_styles', 15 );
 
 
-// On cart page
-// add_action( 'woocommerce_cart_collaterals', 'remove_cart_totals', 9 );
-// function remove_cart_totals(){
-    // Remove cart totals block
-//    remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cart_totals', 10 );
-
-    // Add back "Proceed to checkout" button (and hooks)
-//    echo '<div class="cart_totals">';
-//    do_action( 'woocommerce_before_cart_totals' );
-
-//    echo '<div class="wc-proceed-to-checkout">';
-//    do_action( 'woocommerce_proceed_to_checkout' );
-//    echo '</div>';
-
-//    do_action( 'woocommerce_after_cart_totals' );
-//    echo '</div><br clear="all">';
-// }
-
-// On checkout page
-// add_action( 'woocommerce_checkout_order_review', 'remove_checkout_totals', 1 );
-// function remove_checkout_totals(){
-//     // Remove cart totals block
-//     remove_action( 'woocommerce_checkout_order_review', 'woocommerce_order_review', 10 );
-// };
-
 /**
  * @snippet       Hide one shipping rate when Free Shipping is available
  * @how-to        Get CustomizeWoo.com FREE
@@ -59,20 +34,6 @@ add_action( 'wp_enqueue_scripts', 'child_enqueue_styles', 15 );
  */
   
 // add_filter( 'woocommerce_package_rates', 'bbloomer_unset_shipping_when_free_is_available_in_zone', 9999, 2 );
-   
-// function bbloomer_unset_shipping_when_free_is_available_in_zone( $rates, $package ) {
-   // Only unset rates if free_shipping is available
-//   if ( isset( $rates['free_shipping:8'] ) ) {
-//      unset( $rates['flat_rate:1'] );
-//   }     
-//   return $rates;
-//}
-
-// not needed as basic cart does Dutch and display
-// add_filter('wc_add_to_cart_message', 'handler_function_name', 10, 2);
-// function handler_function_name($message, $product_id) {
-//     return "Bekijk winkelmand" . ' ' .wc_get_product( get_the_id() )    ;
-// }
 
 remove_filter( 'the_content', 'convert_smilies', 20 );
 
@@ -115,24 +76,6 @@ function dynamic_product_link_button_shortcode($atts) {
     return ''; // You can customize this part as needed
 }
 add_shortcode('dynamic_product_link_button', 'dynamic_product_link_button_shortcode');
-
-// no zoom for product images
-// remove gallery or lightbox
-
-// add_action( 'after_setup_theme', function() { 
-// 	remove_theme_support( 'wc-product-gallery-zoom' );
-// 	remove_theme_support( 'wc-product-gallery-lightbox' );
-// 	remove_theme_support( 'wc-product-gallery-slider' );
-// }, 99 );
-
-// function wc_remove_image_effect_support() {
-
-//     remove_theme_support( 'wc-product-gallery-zoom' );
-//     remove_theme_support( 'wc-product-gallery-lightbox' );
-//     remove_theme_support( 'wc-product-gallery-slider' );
-
-// }
-// add_action( 'after_setup_theme', 'wc_remove_image_effect_support', 100 );
 
 add_filter( 'woocommerce_defer_transactional_emails', '__return_true' );
 
@@ -211,8 +154,3 @@ $cols = 32;
 return $cols;
  
 }
-
-// function custom_remove_all_quantity_fields( $return, $product ) {
-//     return true;
-//   }
-//   add_filter ( 'woocommerce_is_sold_individually','custom_remove_all_quantity_fields', 10, 2 );
