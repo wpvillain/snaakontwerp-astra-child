@@ -157,6 +157,32 @@ function bbloomer_filter_by_tag() {
    " );
 }
 
+
+/**
+ * @snippet       Product Category Switcher All Products Addition
+ * @author        Jasper Frumau
+ * @compatible    WooCommerce 8
+ * @donate $9     https://imwz.io
+ */
+function add_all_products_option_to_category_dropdown( $terms, $taxonomies, $args ) {
+    // Check if it's the product category dropdown in WooCommerce
+    if ( in_array( 'product_cat', $taxonomies ) && isset( $args['hide_empty'] ) && $args['hide_empty'] ) {
+        // Add an "All Products" option at the beginning of the list
+        $all_products_option = array(
+            'term_id' => 0,
+            'name'    => 'All Products',
+            'slug'    => 'all-products',
+        );
+        // Prepend elements to the beginning of an array
+        array_unshift( $terms, (object) $all_products_option );
+    }
+
+    return $terms;
+}
+
+add_filter( 'get_terms', 'add_all_products_option_to_category_dropdown', 10, 3 );
+
+
 /**
  * @snippet       Remove Sorting Dropdown @ WooCommerce Shop & Archives
  * @how-to        Get CustomizeWoo.com FREE
@@ -185,3 +211,8 @@ $cols = 32;
 return $cols;
  
 }
+
+// function custom_remove_all_quantity_fields( $return, $product ) {
+//     return true;
+//   }
+//   add_filter ( 'woocommerce_is_sold_individually','custom_remove_all_quantity_fields', 10, 2 );
