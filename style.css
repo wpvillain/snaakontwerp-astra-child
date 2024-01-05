@@ -181,6 +181,6 @@ aspect-ratio: 7.2/1;
   } */
 
   /* remove product quantity in cart & checkout */
-  .product-quantity {
+.product-quantity {
     display: none;
-  }
+}
