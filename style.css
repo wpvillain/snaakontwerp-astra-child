@@ -151,7 +151,15 @@ aspect-ratio: 7.2/1;
 .woocommerce-page .select2-container .select2-selection--single, 
 .woocommerce-page select {
 	border-color:white !important;
-/* 	margin-left:10px; */
+}
+
+@media (min-width:767px) {
+    .woocommerce-js .select2-container .select2-selection--single, 
+    .woocommerce-js select, 
+    .woocommerce-page .select2-container .select2-selection--single, 
+    .woocommerce-page select {
+        display: none;
+    }
 }
 
 @media (max-width:544px) {
@@ -164,3 +172,15 @@ aspect-ratio: 7.2/1;
 	margin-left:10px;
     }
 }
+
+/* debug */
+/* * {
+    background: #000 !important;
+    color: #0f0 !important;
+    outline: solid #f00 1px !important;
+  } */
+
+  /* remove product quantity in cart & checkout */
+  .product-quantity {
+    display: none;
+  }
