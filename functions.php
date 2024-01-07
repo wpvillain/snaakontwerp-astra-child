@@ -38,7 +38,7 @@ add_action( 'wp_enqueue_scripts', 'child_enqueue_styles', 15 );
 remove_filter( 'the_content', 'convert_smilies', 20 );
 
 function add_custom_text_after_product_title_single() {
-    if ( ( is_front_page() || is_shop() ) ) {
+    if ( ( is_front_page() || is_shop() || is_product_category() ) ) {
         // Get the value of the ACF field (replace 'your_acf_field_name' with the actual field name)
             $acf_field_value = get_field( 'kleding_prijs_vanaf' );
             if ($acf_field_value) {
@@ -152,3 +152,18 @@ $cols = 32;
 return $cols;
  
 }
+
+/**
+ * Change the text of the WooCommerce checkout button.
+ *
+ * @param string $button_text The current text of the checkout button.
+ * @return string The modified text for the checkout button.
+ */
+function custom_change_checkout_button_text( $button_text ) {
+    // Change the button text to your desired text
+    $button_text = 'Offerte aanvraag plaatsen';
+
+    return $button_text;
+}
+
+add_filter( 'woocommerce_order_button_text', 'custom_change_checkout_button_text' );
