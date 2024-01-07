@@ -37,6 +37,15 @@ add_action( 'wp_enqueue_scripts', 'child_enqueue_styles', 15 );
 
 remove_filter( 'the_content', 'convert_smilies', 20 );
 
+/**
+ * Add custom text after product title on single product pages.
+ *
+ * This function checks if the current page is the front page, shop page, or a product category page.
+ * If true, it retrieves the value of a specific ACF field ('kleding_prijs_vanaf') and displays it
+ * in a custom div with the class 'acf-field-content' after the product title.
+ *
+ * @return void
+ */
 function add_custom_text_after_product_title_single() {
     if ( ( is_front_page() || is_shop() || is_product_category() ) ) {
         // Get the value of the ACF field (replace 'your_acf_field_name' with the actual field name)
