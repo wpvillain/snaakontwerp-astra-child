@@ -48,6 +48,18 @@ function add_custom_text_after_product_title_single() {
 }
 add_action('woocommerce_after_shop_loop_item', 'add_custom_text_after_product_title_single', 15);
 
+/**
+ * Generates a dynamic product link button shortcode.
+ *
+ * This shortcode checks if WooCommerce is active and a product is available.
+ * If conditions are met, it generates a dynamic hyperlink based on the product's slug
+ * and returns a button link with the specified text.
+ *
+ * @param array $atts Shortcode attributes.
+ *                   'text' - Default button text.
+ *
+ * @return string Button link HTML or an empty string if no product is available.
+ */
 function dynamic_product_link_button_shortcode($atts) {
     // Parse attributes
     $atts = shortcode_atts(array(
@@ -77,6 +89,17 @@ function dynamic_product_link_button_shortcode($atts) {
 }
 add_shortcode('dynamic_product_link_button', 'dynamic_product_link_button_shortcode');
 
+/**
+ * Enable deferred processing of WooCommerce transactional emails.
+ *
+ * By default, WooCommerce processes transactional emails immediately.
+ * This filter allows you to defer the processing of these emails until a later time.
+ *
+ * @param bool $defer_emails Whether to defer transactional emails or not.
+ *                           Set to `true` to defer, and `false` to process immediately.
+ *                           Default is `true` to defer emails.
+ * @return bool              The filtered value indicating whether to defer transactional emails or not.
+ */
 add_filter( 'woocommerce_defer_transactional_emails', '__return_true' );
 
 /**
@@ -99,31 +122,6 @@ function bbloomer_filter_by_tag() {
       });
    " );
 }
-
-
-/**
- * @snippet       Product Category Switcher All Products Addition
- * @author        Jasper Frumau
- * @compatible    WooCommerce 8
- * @donate $9     https://imwz.io
- */
-function add_all_products_option_to_category_dropdown( $terms, $taxonomies, $args ) {
-    // Check if it's the product category dropdown in WooCommerce
-    if ( in_array( 'product_cat', $taxonomies ) && isset( $args['hide_empty'] ) && $args['hide_empty'] ) {
-        // Add an "All Products" option at the beginning of the list
-        $all_products_option = array(
-            'term_id' => 0,
-            'name'    => 'All Products',
-            'slug'    => 'all-products',
-        );
-        // Prepend elements to the beginning of an array
-        array_unshift( $terms, (object) $all_products_option );
-    }
-
-    return $terms;
-}
-
-add_filter( 'get_terms', 'add_all_products_option_to_category_dropdown', 10, 3 );
 
 
 /**
