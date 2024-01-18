@@ -44,6 +44,12 @@ Template: astra
     display: none;
 }
 
+.woocommerce table.cart td.product-price,
+.woocommerce table.cart td.product-quantity,
+.woocommerce table.cart td.product-subtotal {
+    visibility: hidden;
+}
+
 .single-product form.cart .single_add_to_cart_button {
     padding: 6px 7px 5px 7px;
     font-size: 0.8em;
