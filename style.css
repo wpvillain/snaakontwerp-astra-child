@@ -153,6 +153,11 @@ aspect-ratio: 7.2/1;
 	border-color:white !important;
 }
 
+.single-product .wcpa_row select {
+    border-color: #c6d0e9 !important;
+}
+
+/* desktop */
 @media (min-width:767px) {
     .woocommerce-js .select2-container .select2-selection--single, 
     .woocommerce-js select, 
@@ -160,16 +165,24 @@ aspect-ratio: 7.2/1;
     .woocommerce-page select {
         display: none;
     }
+    /* WooCommerce Addons Select boxes should display */
+    .single-product .wcpa_row select {
+        display:inline-block;
+    }
 }
 
+/* mobile view*/
 @media (max-width:544px) {
-	woocommerce-sho.woocommerce .woocommerce-ordering, 
+	.woocommerce .woocommerce-ordering, 
 	.woocommerce-page .woocommerce-ordering {
 	float: none;
 	margin-bottom: 0em;
 	}
 	.elementor-element .woocommerce .woocommerce-result-count {
 	margin-left:10px;
+    }
+    .woocommerce-product-gallery__image {
+        width: 100vw;
     }
 }
 
