@@ -203,3 +203,8 @@ aspect-ratio: 7.2/1;
 .product-quantity {
     display: none;
 }
+
+/* keep notices displayed while hiding other elements like pricing and such */
+.woocommerce .woocommerce-notices-wrapper {
+    display: inherit;
+}
