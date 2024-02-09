@@ -190,6 +190,9 @@ aspect-ratio: 7.2/1;
     .woocommerce-product-gallery__image {
         width: 100vw;
     }
+    /* .wcpa_wrap {
+        width: 330px;
+        } */
 }
 
 /* debug */
@@ -207,4 +210,11 @@ aspect-ratio: 7.2/1;
 /* keep notices displayed while hiding other elements like pricing and such */
 .woocommerce .woocommerce-notices-wrapper {
     display: inherit;
+}
+
+@media only screen and (max-width: 435px) {
+    .woocommerce table.shop_table_responsive tr, 
+    .woocommerce-page table.shop_table_responsive tr {
+          display: grid !important;
+      }
 }
