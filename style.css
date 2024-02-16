@@ -218,3 +218,15 @@ aspect-ratio: 7.2/1;
           display: grid !important;
       }
 }
+
+/* CSS for mobile devices shop page for thumbnail shrinking for a better fit */
+@media only screen and (max-width: 767px) {
+    /* Target WooCommerce shop page */
+    body.woocommerce-shop ul.products li.product a img {
+        max-width: 40vw;
+    }
+    body.woocommerce-shop ul.products li.product .acf-field-content {
+        font-size: 0.9em;
+        }
+}
+
